@@ -5,13 +5,13 @@ import { InputGroup,FormControl } from 'react-bootstrap';
 
 function Todo(props) {
 
-    const {text} = props
+    const {id,text} = props
 
 
 
     return (
        <div>
-            <InputGroup className="mb-3">
+            <InputGroup id={id} className="mb-3">
                 <InputGroup.Prepend>
                 <InputGroup.Checkbox aria-label="Checkbox for following text input" />
                 </InputGroup.Prepend>

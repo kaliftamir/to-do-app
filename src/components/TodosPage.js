@@ -16,6 +16,14 @@ function TodosPage() {
         
     }
 
+    // Array to render
+    
+    let toDoArr = [];
+    let i = 0
+    for(let j=0;j<=3;j++) {
+        toDoArr.push(<Todo id={j} onChange={updateIname} text={iname}/>)
+    }
+
     // Getting props callback from Input component (child)
     const [isEntered, setIsEntered] = React.useState(false);
 
@@ -24,18 +32,21 @@ function TodosPage() {
 
         if (event.key === 'Enter') {
           console.log('was entered') 
+
+          toDoArr.push(<Todo onChange={updateIname} text={iname}/>)
+          console.log(toDoArr) 
            
           setIsEntered(true) 
         
           setIname(event.target.value)
-          event.target.value=""          
+          event.target.value="" 
+          setIsEntered(false)         
           
         }
         
     }
      
-    // Array to render
-    const toDoArr = [<Todo onChange={updateIname} text={iname}/>];
+
         
 
     return (
