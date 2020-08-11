@@ -5,12 +5,18 @@ import Todo from './TodosPage/Todo';
 
 function TodosPage() {
 
+    const [iname, setIname] = React.useState("");
+    
+    function updateIname (event) {
+        setIname(event.target.value)  
+    }
+
 
 
     return (
        <div className="container">
            <h2>Todos</h2>
-           <input placeholder="What's next?"/>
+           <input value={iname} onChange={updateIname} placeholder="What's next?"/>
            <Todo/>
            <Todo/>
            <Todo/>
