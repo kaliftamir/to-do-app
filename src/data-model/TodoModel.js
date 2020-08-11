@@ -1,9 +1,9 @@
 
 
 class TodoModel {
-    constructor(text) {
+    constructor(id,text) {
+        this.id = id;
         this.brand = text;
-
     }
 
 }
