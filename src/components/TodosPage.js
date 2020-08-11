@@ -12,6 +12,8 @@ function TodosPage() {
            <h2>Todos</h2>
            <input placeholder="What's next?"/>
            <Todo/>
+           <Todo/>
+           <Todo/>
        </div>
     )
 }
