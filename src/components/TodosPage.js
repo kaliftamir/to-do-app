@@ -8,7 +8,8 @@ function TodosPage() {
     const [iname, setIname] = React.useState("");
     
     function updateIname (event) {
-        setIname(event.target.value)  
+        setIname(event.target.value) 
+        console.log(iname) 
     }
 
 
