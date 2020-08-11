@@ -28,6 +28,7 @@ function TodosPage() {
           setIsEntered(true) 
         
           setIname(event.target.value)
+          event.target.value=""          
           
         }
         
