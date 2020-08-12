@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Input (props) {
 
-    const {id,text,inputEntered} = props
+    const {text,inputEntered} = props
 
     // // controlled component
     // const [iname, setIname] = React.useState("");
@@ -16,8 +16,8 @@ function Input (props) {
     // }
     
     // Sending State Up (props callback)
-    function entered(target) {
-        inputEntered(target);
+    function entered(event) {
+        inputEntered(event);
     }
 
     // const [isEntered, setIsEntered] = React.useState(false);
@@ -32,7 +32,8 @@ function Input (props) {
         
     //   }
     
-      return <input id={id} type="text" onKeyDown={entered} placeholder="What's next?"/>
+      return <input type="text" onKeyDown={entered} placeholder="What's next?"/>  
+      
 }
 
 export default Input;

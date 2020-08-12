@@ -15,7 +15,7 @@ function Todo(props) {
                 <InputGroup.Prepend>
                 <InputGroup.Checkbox aria-label="Checkbox for following text input" />
                 </InputGroup.Prepend>
-                <FormControl aria-label="Text input with checkbox" value={text} />
+                <FormControl aria-label="Text input with checkbox" value={text} onChange={()=>text} />
             </InputGroup>
         
         </div>

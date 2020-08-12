@@ -12,49 +12,44 @@ function TodosPage() {
     function updateIname (event) {
         
         setIname(event.target.value)              
-        console.log(event.target.value) 
-        
+        console.log(event.target.value)         
     }
 
-    // Array to render
-    
-    let toDoArr = [];
-    let i = 0
-    for(let j=0;j<=3;j++) {
-        toDoArr.push(<Todo id={j} onChange={updateIname} text={iname}/>)
-    }
+    // Array to render    
+   
+    // for(let j=0;j<=3;j++) {
+    //     toDoArr.push(<Todo id={j} onChange={updateIname} text={iname}/>)
+    // }
 
     // Getting props callback from Input component (child)
-    const [isEntered, setIsEntered] = React.useState(false);
-
+    const [toRender, setToRender] = React.useState([]);
+    let toDoArr = [toRender];
+    let i = 0
    
     function handleKeyDown (event) {
 
         if (event.key === 'Enter') {
-          console.log('was entered') 
+          console.log('was entered')          
+      
+          toDoArr.push(<Todo key={i} id={i} text={event.target.value }/>) 
+          i++       
 
-          toDoArr.push(<Todo onChange={updateIname} text={iname}/>)
-          console.log(toDoArr) 
-           
-          setIsEntered(true) 
-        
-          setIname(event.target.value)
-          event.target.value="" 
-          setIsEntered(false)         
+          setToRender(toDoArr)          
+          console.log(toRender)
+          event.target.value=""        
           
-        }
-        
+        }        
+               
     }
-     
 
-        
+     
 
     return (
        <div className="container">
            <h2>Todos</h2>
         
-           <Input inputEntered={handleKeyDown}/>
-           {toDoArr}
+           <Input inputEntered={handleKeyDown}/>           
+           {toRender}
        </div>
     )
 }
