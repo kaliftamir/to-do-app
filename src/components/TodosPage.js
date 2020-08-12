@@ -21,11 +21,13 @@ function TodosPage() {
     //     toDoArr.push(<Todo id={j} onChange={updateIname} text={iname}/>)
     // }
 
-    // Getting props callback from Input component (child)
+    
     const [toRender, setToRender] = React.useState([]);
+    const [counter, setCounter] = React.useState(0);
     let toDoArr = [toRender];
-    let i = 0
+    let i = counter
    
+    // Getting props callback from Input component (child)
     function handleKeyDown (event) {
 
         if (event.key === 'Enter') {
@@ -35,14 +37,13 @@ function TodosPage() {
           i++       
 
           setToRender(toDoArr)          
+          setCounter(i)          
           console.log(toRender)
           event.target.value=""        
           
         }        
                
-    }
-
-     
+    }     
 
     return (
        <div className="container">
@@ -50,6 +51,7 @@ function TodosPage() {
         
            <Input inputEntered={handleKeyDown}/>           
            {toRender}
+           <h4>{`${counter} items left`}</h4>
        </div>
     )
 }
