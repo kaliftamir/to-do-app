@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -76,14 +77,40 @@ Input {
   right: 10px;
   bottom: 3px;
   visibility: hidden;
-   
+  color: red;
 
 }
+
 
 .todo:hover label {
 
   visibility: visible; 
   cursor: pointer;
+}
+
+.nav {
+
+  justify-content: space-between;
+
+}
+
+Button {
+
+  margin-left: 10px;
+  font-weight: bolder;
+
+}
+
+.header {
+  text-align: center;
+}
+
+.header  h1 {
+  font-weight: 900;
+}
+
+.checked {
+  background-color: tomato;
 }
 
 
