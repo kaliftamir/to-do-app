@@ -51,7 +51,7 @@ function TodosPage() {
         
            <Input inputEntered={handleKeyDown}/>           
            {toRender}
-           <h4>{`${counter} items left`}</h4>
+           <p>{`${counter} items left`}</p>
        </div>
     )
 }
