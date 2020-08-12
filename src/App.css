@@ -39,6 +39,7 @@
 
 Input {
   margin-bottom: 15px;
+  
 }
 
 .input-group-text { 
@@ -60,11 +61,29 @@ Input {
 
 }
 
+
 .form-control {
    border:none;
    border-bottom: solid 1px;
    padding-left: 0px; 
    
+}
+
+
+.flex label {
+
+  position: absolute;
+  right: 10px;
+  bottom: 3px;
+  visibility: hidden;
+   
+
+}
+
+.todo:hover label {
+
+  visibility: visible; 
+  cursor: pointer;
 }
 
 

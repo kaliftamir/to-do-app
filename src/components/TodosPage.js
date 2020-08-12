@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Todo from './TodosPage/Todo';
 import Input from './TodosPage/Input';
+import { Navbar,Nav,Button,Form,FormControl } from 'react-bootstrap';
 
 
 function TodosPage() {    
@@ -52,6 +53,7 @@ function TodosPage() {
            <Input inputEntered={handleKeyDown}/>           
            {toRender}
            <p>{`${counter} items left`}</p>
+
        </div>
     )
 }

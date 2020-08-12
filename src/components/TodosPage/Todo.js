@@ -13,13 +13,15 @@ function Todo(props) {
 
 
     return (
-       <div>
+       <div className="flex todo">
             <InputGroup id={id} className="mb-3">
                 <InputGroup.Prepend>
                 <InputGroup.Checkbox aria-label="Checkbox for following text input" />
                 </InputGroup.Prepend>
                 <FormControl aria-label="Text input with checkbox" style={myStyle} value={text} onChange={()=>text} />
+                <label>X</label>
             </InputGroup>
+            
         
         </div>
     )
