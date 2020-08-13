@@ -110,7 +110,8 @@ Button {
 }
 
 .checked {
-  background-color: tomato;
+ 
+  text-decoration-line: line-through;
 }
 
 

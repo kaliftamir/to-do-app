@@ -40,15 +40,16 @@ function TodosPage(props) {
     
   let toDoToRender = toRender.map(todo => 
 
-    <div key={todo.i}>     
+    <div key={todo.i}  className={"checked"}>     
                       
       <Todo id={todo.i} text={iname} inputChecked={handleCheckbox}/>
     
     </div>);
 
     function allBtn() { 
-      let all = toRender
-      setToRender(all) 
+      let all = []//toRender.map((item)=> item.id)
+      setToRender(all)
+      console.log(all) 
       
     }
    
@@ -59,10 +60,10 @@ function TodosPage(props) {
           console.log('was entered')          
       
           // Todo (props) - onChange={updateIname} checked={isChecked}
-          toDoArr.push(           
-
-             <Todo key={i} id={i} text={iname} inputChecked={handleCheckbox}/>
-
+          toDoArr.push(
+           
+            <Todo className={"checked"} key={i} id={i} text={iname} inputChecked={handleCheckbox}/>
+           
           )   
 
           i++        
