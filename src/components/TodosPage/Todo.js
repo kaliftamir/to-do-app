@@ -5,7 +5,7 @@ import { InputGroup,FormControl } from 'react-bootstrap';
 
 function Todo(props) {
 
-    const {id,text,checked,inputChecked} = props
+    const {id,text,inputChecked} = props
     const myStyle = {
         "fontWeight": "bold",         
          "fontSize": "x-large"       
@@ -20,9 +20,9 @@ function Todo(props) {
        <div className="flex todo">
             <InputGroup id={id} className="mb-3">
                 <InputGroup.Prepend>
-                <InputGroup.Checkbox aria-label="Checkbox for following text input" onChange={checkedFunc} checked={checked} />
+                <InputGroup.Checkbox aria-label="Checkbox for following text input" onChange={checkedFunc}/>
                 </InputGroup.Prepend>
-                <FormControl aria-label="Text input with checkbox" style={myStyle} value={text} onChange={()=>text} />
+                <FormControl className="look" aria-label="Text input with checkbox" style={myStyle} value={text} onChange={()=>text} />
                 <label>X</label>
             </InputGroup>
             

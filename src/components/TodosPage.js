@@ -5,42 +5,33 @@ import Input from './TodosPage/Input';
 import { Button } from 'react-bootstrap';
 
 
-function TodosPage(props) { 
+function TodosPage() { 
 
-    const {checked} = props
+    //const {checked} = props
     
 
     // controlled component
     const [iname, setIname] = React.useState("");
-    //const [ibox, setIbox] = React.useState(false);
-    
     
     function updateIname (event) {
         
         setIname(event.target.value)              
         console.log(event.target.value) 
-        //setIbox(event.target.checked)
-        //console.log(event.target.checked) 
     }
-
-    // Array to render    
-   
-    // for(let j=0;j<=3;j++) {
-    //     toDoArr.push(<Todo id={j} onChange={updateIname} text={iname}/>)
-    // }
 
     
     const [toRender, setToRender] = React.useState([]);
     const [counter, setCounter] = React.useState(0);
-    const [isChecked, setIsChecked] = React.useState("");
+    const [isChecked, setIsChecked] = React.useState("");  
+   
 
     let toDoArr = toRender;
     let i = counter
 
     
-  let toDoToRender = toRender.map((todo,index,array) => 
+  let toDoToRender = toRender.map((todo) => 
 
-    <div key={todo.i}  className={"checked"}>     
+    <div key={todo.i} className={isChecked}>     
                       
       <Todo id={todo.props.i} text={todo.props.text} inputChecked={handleCheckbox}/>
     
@@ -48,7 +39,7 @@ function TodosPage(props) {
 
   
     function allBtn() { 
-      let all = []//toRender.map((item)=> item.id)
+      let all = toRender//.map((item)=> item.id)
       setToRender(all)
       console.log(all) 
       
@@ -63,7 +54,7 @@ function TodosPage(props) {
           // Todo (props) - onChange={updateIname} checked={isChecked}
           toRender.push( 
            
-            <Todo key={i} id={i} text={event.target.value} inputChecked={handleCheckbox} checked="false"/>
+            <Todo key={i} id={i} text={event.target.value} inputChecked={handleCheckbox} />
            
           )   
 
@@ -78,35 +69,40 @@ function TodosPage(props) {
           console.log(toRender)
           //console.log(toDoToRender)
           console.log(i)
-          console.log(event.target.value)
-              
+          console.log(event.target.value)              
           
-        }  
-              
+        }               
                
     }    
 
-       
+    
     
     // Getting props callback from Todo component (child)
     function handleCheckbox (event) {
 
-        const isCheked = event.target.checked;
-        if (isCheked===true) {
+        
+        if (event.target.checked===true) {
+
+            console.log('is checked') 
+            event.target.className="checked" 
 
             setCounter(i=i-1)
-            //setIsChecked(true)
+            setIsChecked("checked")
             
         } else {
 
             setCounter(i=i+1)
+            event.target.className="un-checked"
+            setIsChecked("")
            
         }
         
         console.log(counter)
-        setIsChecked(event.target.checked) 
-        console.log(isCheked)
-        console.log(event.target)
+       
+        //console.log(event.target.checked)
+        //console.log(event.target.className)
+        console.log(isChecked)
+    
     }
 
   

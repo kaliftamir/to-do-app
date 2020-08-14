@@ -112,6 +112,11 @@ Button {
 .checked {
  
   text-decoration-line: line-through;
+  color:lightgray; 
+}
+
+.checked .look {
+  color: lightgray;
 }
 
 
