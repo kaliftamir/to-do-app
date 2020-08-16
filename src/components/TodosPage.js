@@ -91,11 +91,24 @@ function ToDoPage() {
     }
 
 
+  
+    // delet function   
+    function handleDelete(id,completed) {
 
-    // Update the 'filteredArr' array to be with the right button call
-    // 'todos' = the state of rendering
-   
+        if (todo=> todo.completed !== completed) {
+                        
+        setTodos(todos.filter(todo=> todo.id !==id)) // returns all ids that no equal the id was sent       
+        i--
+        setCounter(i)  // update the counter
 
+        } else {
+
+            setCounter(i)
+            
+
+        }
+
+    }
 
 
 
@@ -106,8 +119,15 @@ function ToDoPage() {
            </div>
             
             <Input onSubmit={addTodo}/>
-            {/* {JSON.stringify(todos)}                        */}
-            {newTodos.map(todo=>(<Todo key={todo.id} id={todo.id} todo={todo} toggleDone={()=>toggleDone(todo.id)}/>))}
+           
+            {newTodos.map(todo=>(
+
+            <Todo key={todo.id}
+             id={todo.id} todo={todo}
+             deleteTodo={()=>handleDelete(todo.id,todo.completed)} //  callback props
+             toggleDone={()=>toggleDone(todo.id)}/>
+
+             ))}
 
              {/* in the line abouve passing 'todo' instaed of name={todo.name} */}
 

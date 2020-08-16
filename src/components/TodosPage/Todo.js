@@ -7,7 +7,7 @@ import { InputGroup,FormControl } from 'react-bootstrap';
 
 function Todo(props) {
 
-    const {name,toggleDone} = props
+    const {name,toggleDone,deleteTodo} = props
 
     const myStyle = {
         "fontWeight": "bold",         
@@ -26,7 +26,7 @@ function Todo(props) {
                 <InputGroup.Checkbox aria-label="Checkbox for following text input" onClick={toggleDone}/>
                 </InputGroup.Prepend>
                 <FormControl aria-label="Text input with checkbox" style={myStyle} value={props.todo.name}/>
-                <label>X</label>
+                <label onClick={deleteTodo}>X</label>
             </InputGroup>
 
             </div>
