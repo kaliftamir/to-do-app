@@ -16,6 +16,7 @@ function Todo(props) {
 
     return (
 
+
         <div className={props.todo.completed ? "checked" : ""}>
 
            <div>

@@ -12,8 +12,12 @@ function ToDoPage() {
     
     const [todos, setTodos] = React.useState([]);   
     const [counter, setCounter] = React.useState(0);
+    const [filteredTodos, setFilteredTodos] = React.useState("all");
+
    
-    let i = counter   
+    let i = counter 
+    
+    
 
     
     function addTodo(todo) {
@@ -58,8 +62,42 @@ function ToDoPage() {
 
             })
         );
-    };   
+    }; 
+
+    // function that filters the todos list by the button
+
+    let newTodos=[] 
+
+    if(filteredTodos==="all") {
+
+        newTodos=todos
+
+    } else if(filteredTodos==="completed") {
+
+        newTodos=todos.filter(todo => todo.completed)
+
+    } else if (filteredTodos==="active") {
+
+        newTodos=todos.filter(todo => !(todo.completed))
+        
+    }
+
+    // update the state for the relevant clicking
+    function toShow(string) {  
+                
+       setFilteredTodos(string) 
+        console.log(filteredTodos)
+        
+    }
+
+
+
+    // Update the 'filteredArr' array to be with the right button call
+    // 'todos' = the state of rendering
    
+
+
+
 
     return (
        <div className="container">
@@ -69,7 +107,7 @@ function ToDoPage() {
             
             <Input onSubmit={addTodo}/>
             {/* {JSON.stringify(todos)}                        */}
-            {todos.map(todo=>(<Todo key={todo.id} id={todo.id} todo={todo} toggleDone={()=>toggleDone(todo.id)}/>))}
+            {newTodos.map(todo=>(<Todo key={todo.id} id={todo.id} todo={todo} toggleDone={()=>toggleDone(todo.id)}/>))}
 
              {/* in the line abouve passing 'todo' instaed of name={todo.name} */}
 
@@ -77,9 +115,9 @@ function ToDoPage() {
 
             <p>{`${counter} items left`}</p>
             <div  className="navBtn">
-                <Button variant="outline-dark">All</Button>
-                <Button variant="outline-dark">Active</Button>
-                <Button variant="outline-dark">Completed</Button>
+                <Button onClick={()=>toShow("all")} variant="outline-dark">All</Button>
+                <Button onClick={()=>toShow("active")}variant="outline-dark">Active</Button>
+                <Button onClick={()=>toShow("completed")}variant="outline-dark">Completed</Button>
             </div>    
 
            </div>
