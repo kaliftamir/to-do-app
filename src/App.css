@@ -82,7 +82,7 @@ Input {
 }
 
 
-.todo:hover label {
+.flex:hover label {
 
   visibility: visible; 
   cursor: pointer;

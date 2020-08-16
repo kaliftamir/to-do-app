@@ -92,7 +92,7 @@ function ToDoPage() {
 
 
   
-    // delet function   
+    // delete function   
     function handleDelete(id,completed) {
 
         if (todo=> todo.completed !== completed) {
@@ -103,8 +103,7 @@ function ToDoPage() {
 
         } else {
 
-            setCounter(i)
-            
+            setCounter(i)         
 
         }
 
