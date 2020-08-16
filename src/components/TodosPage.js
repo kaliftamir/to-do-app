@@ -92,18 +92,18 @@ function ToDoPage() {
 
 
   
-    // delete function   
-    function handleDelete(id,completed) {
-
-        if (todo=> todo.completed !== completed) {
+    // delete all todos that not completed and user press on X 
+    function handleDelete(id,todo) {
+        
+        if(todo.completed===true) {
                         
-        setTodos(todos.filter(todo=> todo.id !==id)) // returns all ids that no equal the id was sent       
-        i--
-        setCounter(i)  // update the counter
-
+            setTodos(todos.filter(todo=> todo.id !==id)) // delete todo that was completed
         } else {
 
-            setCounter(i)         
+            setTodos(todos.filter(todo=> todo.id !==id)) // delete todo that was not completed
+            i--   
+            setCounter(i)  // update counter
+            alert("incomplete task was deleted")
 
         }
 
@@ -123,7 +123,7 @@ function ToDoPage() {
 
             <Todo key={todo.id}
              id={todo.id} todo={todo}
-             deleteTodo={()=>handleDelete(todo.id,todo.completed)} //  callback props
+             deleteTodo={()=>handleDelete(todo.id,todo)} //  callback props
              toggleDone={()=>toggleDone(todo.id)}/>
 
              ))}
