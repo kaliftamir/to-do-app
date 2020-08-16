@@ -101,7 +101,7 @@ Button {
 
 }
 
-.header {
+.header, form {
   text-align: center;
 }
 
@@ -115,7 +115,7 @@ Button {
   color:lightgray; 
 }
 
-.checked .look {
+.checked .look, .checked .input-group-text, .checked .form-control  {
   color: lightgray;
 }
 
