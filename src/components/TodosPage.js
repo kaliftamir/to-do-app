@@ -22,7 +22,7 @@ function ToDoPage() {
     
     function addTodo(todo) {
 
-        const newTodos = [todo, ...todos] // copy of 'todos' array
+        const newTodos = [todo, ...todos] // copy the 'todos' array + add the 'todo' was sent with the function
         setTodos(newTodos) 
         i++
         setCounter(i)        
@@ -122,7 +122,7 @@ function ToDoPage() {
             {newTodos.map(todo=>(
 
             <Todo key={todo.id}
-             id={todo.id} todo={todo}
+             id={todo.id} todo={todo} commpleted={todo.commpleted}
              deleteTodo={()=>handleDelete(todo.id,todo)} //  callback props
              toggleDone={()=>toggleDone(todo.id)}/>
 
