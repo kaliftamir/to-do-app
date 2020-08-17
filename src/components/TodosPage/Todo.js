@@ -1,13 +1,11 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { InputGroup,FormControl } from 'react-bootstrap';
-// import TodosPage from './components/TodosPage';
 
 function Todo(props) {
 
-    const {name,toggleDone,deleteTodo} = props
+    const {toggleDone,deleteTodo} = props
 
     const myStyle = {
         "fontWeight": "bold",         

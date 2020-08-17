@@ -17,9 +17,6 @@ function ToDoPage() {
    
     let i = counter 
     
-    
-
-    
     function addTodo(todo) {
 
         const newTodos = [todo, ...todos] // copy the 'todos' array + add the 'todo' was sent with the function

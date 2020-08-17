@@ -1,24 +1,16 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { InputGroup,FormControl } from 'react-bootstrap';
-
 
 function Input(props) {
 
-    const {id,name,completed,onSubmit} = props
+    const {onSubmit} = props
 
     const [text, setText] = React.useState("");
     const [index, setIndex] = React.useState(0);
    
     let j = index 
 
-
-    const myStyle = {
-        "fontWeight": "bold",         
-         "fontSize": "x-large"       
-    }
-
-  
+ 
     function handleChange(event) {
 
         setText(event.target.value)
