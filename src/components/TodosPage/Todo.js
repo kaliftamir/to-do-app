@@ -16,16 +16,16 @@ function Todo(props) {
 
     return (
 
-
+         // 'todo' was sent from the paraent in oredr to use it here (props.todo.completed) and below ({props.todo.name)
         <div className={props.todo.completed ? "flex checked" : "flex"}>
 
            <div>
 
             <InputGroup className="mb-3">
                 <InputGroup.Prepend>
-                <InputGroup.Checkbox aria-label="Checkbox for following text input" onClick={toggleDone}/>
+                <InputGroup.Checkbox  onClick={toggleDone}/>
                 </InputGroup.Prepend>
-                <FormControl aria-label="Text input with checkbox" style={myStyle} value={props.todo.name}/>
+                <FormControl style={myStyle} value={props.todo.name} readOnly/>  
                 <label onClick={deleteTodo}>X</label>
             </InputGroup>
 

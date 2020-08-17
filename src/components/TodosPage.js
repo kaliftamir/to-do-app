@@ -27,7 +27,7 @@ function ToDoPage() {
         i++
         setCounter(i)        
         console.log(todos)
-        console.log(todo.text)  
+        console.log(todo.name)  
     }  
  
     // deals with checkbox of each 'todo'
@@ -38,7 +38,7 @@ function ToDoPage() {
 
                 // update the counter
                 if(todo.completed===true) {
-
+                
                     i++
 
                 } else {
@@ -64,7 +64,7 @@ function ToDoPage() {
         );
     }; 
 
-    // function that filters the todos list by the button
+    // the function filters the todos list by the button was pressed
 
     let newTodos=[] 
 
@@ -128,7 +128,7 @@ function ToDoPage() {
 
              ))}
 
-             {/* in the line abouve passing 'todo' instaed of name={todo.name} */}
+             {/* in the line above passing 'todo' instaed of name={todo.name} */}
 
            <div className="row nav">
 

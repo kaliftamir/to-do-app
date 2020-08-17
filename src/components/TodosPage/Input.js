@@ -29,7 +29,7 @@ function Input(props) {
 
         event.preventDefault();
 
-        // sending the props to parent and submit new 'todo'      
+        // sending the callback props to parent and submit new 'todo'      
         onSubmit({
             id:index,
             name:text,
@@ -48,7 +48,7 @@ function Input(props) {
        <div className="flex todo">
          <form onSubmit={handleSubmit}>
 
-           <input name="text" value={text} onChange={handleChange} placeholder="What's next?"/>
+           <input name="text"  value={text} onChange={handleChange} placeholder="What's next?"/>
           
          </form>            
         

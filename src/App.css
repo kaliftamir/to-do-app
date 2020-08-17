@@ -113,10 +113,16 @@ Button {
  
   text-decoration-line: line-through;
   color:lightgray; 
+ 
+  
 }
 
 .checked .look, .checked .input-group-text, .checked .form-control  {
   color: lightgray;
+}
+
+.form-control[readonly] {
+  background-color: transparent; 
 }
 
 
